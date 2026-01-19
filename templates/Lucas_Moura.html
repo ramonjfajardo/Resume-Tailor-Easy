@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
       :root {
-        --primary: #3d6b6b;
-        --primary-dark: #2d5454;
-        --accent: #5a8a8a;
-        --accent-light: #8ab4b4;
-        --text-dark: #2d3a3a;
-        --text-medium: #4a5c5c;
-        --text-light: #6a7e7e;
+        --primary: #3d5a4c;
+        --primary-dark: #2d4438;
+        --accent: #5a7d6a;
+        --accent-light: #8ba89a;
+        --highlight: #f5f8f6;
+        --text-dark: #2d3436;
+        --text-medium: #4a5568;
+        --text-light: #718096;
         --bg: #ffffff;
-        --code-bg: #f5f8f8;
       }
 
       * {
@@ -24,7 +24,7 @@
       }
 
       body {
-        font-family: "Segoe UI", "Roboto", sans-serif;
+        font-family: "Arial", "Helvetica", sans-serif;
         font-size: 10.5pt;
         line-height: 1.4;
         color: var(--text-dark);
@@ -34,45 +34,46 @@
 
       /* Header */
       header {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        padding-left: 12px;
-        margin-bottom: 14px;
-        margin-top: -10mm;
+        background: var(--primary);
+        color: white;
+        padding: 14px 60px;
+        margin: -15mm -0.6in 14px -0.6in;
+        padding-top: calc(15mm + 14px);
       }
 
-      .header h1 {
+      header h1 {
         font-size: 24pt;
         font-weight: 700;
-        color: var(--text-dark);
-        letter-spacing: -0.5pt;
+        letter-spacing: 0.5pt;
         margin-bottom: 2px;
+        padding-left: 50px;
       }
 
-      .header .title {
-        font-size: 11pt;
-        font-weight: 500;
-        color: var(--primary);
-        margin-bottom: 4px;
-        text-align: center;
+      header .title {
+        font-size: 12pt;
+        font-weight: 400;
+        opacity: 0.95;
+        margin-bottom: 8px;
+        padding-left: 50px;
       }
 
       .contact {
-        text-align: center;
         font-size: 9pt;
-        color: var(--text-medium);
-        line-height: 1.6;
+        opacity: 0.9;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 14px;
+        padding-left: 50px;
       }
 
       .contact a {
-        color: var(--primary);
+        color: white;
         text-decoration: none;
       }
 
-      .contact div {
-        margin-bottom: 1px;
+      .contact span::before {
+        content: "› ";
+        opacity: 0.7;
       }
 
       /* Section Headers */
@@ -81,15 +82,14 @@
       }
 
       section h2 {
-        font-size: 10.5pt;
+        font-size: 11pt;
         font-weight: 700;
         text-transform: uppercase;
-        color: var(--bg);
-        background: var(--primary);
-        padding: 4px 10px;
+        color: var(--primary);
+        padding-bottom: 3px;
         margin-bottom: 8px;
         letter-spacing: 1pt;
-        display: inline-block;
+        border-bottom: 2px solid var(--accent);
       }
 
       /* Summary */
@@ -97,9 +97,9 @@
         font-size: 10pt;
         line-height: 1.5;
         color: var(--text-medium);
-        padding: 8px 12px;
-        background: var(--code-bg);
-        border-left: 3px solid var(--accent);
+        background: var(--highlight);
+        padding: 10px 12px;
+        border-radius: 3px;
       }
 
       /* Skills */
@@ -123,43 +123,39 @@
       /* Experience */
       .exp-item {
         margin-bottom: 12px;
-        padding-left: 10px;
-        border-left: 2px solid var(--accent-light);
       }
 
       .exp-header {
         display: flex;
         justify-content: space-between;
-        align-items: baseline;
-        margin-bottom: 1px;
+        align-items: center;
+        background: var(--highlight);
+        padding: 5px 10px;
+        margin-bottom: 4px;
+        border-left: 3px solid var(--accent);
       }
 
       .exp-title {
         font-size: 10.5pt;
         font-weight: 700;
-        color: var(--text-dark);
+        color: var(--primary-dark);
       }
 
       .exp-dates {
         font-size: 9pt;
         color: var(--primary);
         font-weight: 600;
-        font-family: "Consolas", "Courier New", monospace;
       }
 
       .exp-company {
         font-size: 10pt;
         color: var(--text-medium);
         margin-bottom: 4px;
-      }
-
-      .exp-company strong {
-        font-weight: 600;
-        color: var(--text-dark);
+        padding-left: 13px;
       }
 
       .exp-details {
-        margin-left: 14px;
+        margin-left: 26px;
         padding-left: 0;
       }
 
@@ -172,15 +168,17 @@
 
       .exp-details li::marker {
         color: var(--accent);
+        font-weight: bold;
       }
 
       /* Education */
       .edu-item {
         margin-bottom: 6px;
-        padding-left: 10px;
         display: flex;
         flex-direction: column;
-        border-left: 2px solid var(--accent-light);
+        padding: 5px 10px;
+        background: var(--highlight);
+        border-left: 3px solid var(--accent);
       }
 
       .edu-header {
@@ -191,14 +189,14 @@
 
       .edu-degree {
         font-size: 10.5pt;
-        font-weight: 600;
-        color: var(--text-dark);
+        font-weight: 700;
+        color: var(--primary-dark);
       }
 
       .edu-dates {
         font-size: 9pt;
         color: var(--primary);
-        font-family: "Consolas", "Courier New", monospace;
+        font-weight: 500;
       }
 
       .edu-school {
@@ -209,7 +207,11 @@
       /* Print */
       @media print {
         body {
-          padding: 0.5in 0.6in;
+          padding: 0 0.6in 0.5in 0.6in;
+        }
+        header {
+          margin: -0.5in -0.6in 14px -0.6in;
+          padding: 0.5in 20px 14px 20px;
         }
       }
 
