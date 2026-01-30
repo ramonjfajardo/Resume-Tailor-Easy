@@ -226,7 +226,7 @@
       <h1>{{name}}</h1>
       <div class="title">{{title}}</div>
       <div class="contact">
-        {{#if phone}}{{phone}} • {{/if}}{{email}}{{#if linkedin}} • {{linkedin}}<br />{{/if}}
+        {{#if phone}}{{phone}} • {{/if}}{{email}}{{#if linkedin}} • <a href="{{linkedin}}">{{linkedin}}</a>{{/if}}{{#if website}} • <a href="{{website}}">{{website}}</a>{{/if}}<br />
         • {{location}}
       </div>
     </header>
